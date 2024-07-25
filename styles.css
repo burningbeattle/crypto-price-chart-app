@@ -1,0 +1,167 @@
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.container.light-mode {
+    background-color: #fff;
+}
+
+header.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+.crypto-item.light-mode {
+    border-color: #ddd;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: #ddd;
+}
+
+.container.dark-mode {
+    background-color: #2d2d2d;
+}
+
+header.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+.crypto-item.dark-mode {
+    border-color: #444;
+    background-color: #333;
+    color: #ddd;
+}
+
+/* General Styles */
+body {
+    font-family: 'Mukta', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+h1 {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: inherit; /* Inherit color from the parent element */
+}
+
+/* Crypto Box Styles */
+.crypto-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    overflow-y: auto;
+    max-height: calc(100vh - 100px);
+    padding: 0 10px;
+}
+
+.crypto-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.2s, background-color 0.3s, color 0.3s;
+    min-height: 80px; /* Ensure consistent height */
+    box-sizing: border-box;
+    overflow: hidden; /* Ensure content stays within bounds */
+    text-overflow: ellipsis; /* Handle overflowed text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.crypto-item:hover {
+    transform: scale(1.05);
+}
+
+.crypto-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+.crypto-name {
+    font-weight: 700;
+    font-size: 1.1em;
+    flex-grow: 1; /* Allow name to take available space */
+    overflow: hidden; /* Ensure long names don't overflow */
+    text-overflow: ellipsis; /* Handle overflowed text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.crypto-price {
+    font-weight: 400;
+    font-size: 1em;
+    margin-left: 20px; /* Ensure spacing from the name */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    .crypto-item {
+        justify-content: center;
+        text-align: center; /* Center text for better readability on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .crypto-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .crypto-item img {
+        margin-bottom: 10px;
+    }
+
+    .crypto-name, .crypto-price {
+        font-size: 1em;
+    }
+}
